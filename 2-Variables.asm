@@ -15,7 +15,7 @@ _main:
 	mov eax, 0x04 		;Syscall write
 	mov ecx, byte1 		;Telling it what to print. We will be messing with the file descriptor this time
 	mov edx, byte1L		;Telling it exactly the number of characters to print (lenght)
-	int 0x80		      ;Executing the syscall
+	int 0x80		;Executing the syscall
 
 				;NOW EAX WILL NOT CONTAIN 0X04 ANYMORE, SINCE THE SYSCALL HAS BEEN EXECUTED. EAX NOW WILL HAVE ANOTHER VALUE IN IT
 				;(IT USUALLY DEPENDS ON WHAT THE RETURN CODE IS)
@@ -36,11 +36,11 @@ _main:
 	int 0x80
 
 	;Creating variables
-	byte1: db "Hi", 0x0a			;Giving to the variable byte1 (Is 8 bits) the contents that it will hold with a newline (0x0a)
-	byte1L equ $-byte1			  ;Getting the lenght of the data that we will print
+	byte1: db "Hi", 0x0a		;Giving to the variable byte1 (Is 8 bits) the contents that it will hold with a newline (0x0a)
+	byte1L equ $-byte1		;Getting the lenght of the data that we will print
 
-	byte2: db "How", 0x0a			;The same as before
-	byte2L equ $-byte2			  ;The same as before
+	byte2: db "How", 0x0a		;The same as before
+	byte2L equ $-byte2		;The same as before
 
 	word1: dw "Is It Going People?", 0x0a	;Giving to the variable word1 (Is 16 bits) the contents that it will hold with a newline (0x0a)
-	word1L equ $-word1		      	        ;Getting the lenght of the data that we want to print
+	word1L equ $-word1			;Getting the lenght of the data that we want to print

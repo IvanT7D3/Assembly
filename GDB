@@ -1,0 +1,9 @@
+gdb main : Run main on GBD
+set disassembly-flavor intel : Changes the way values and instructions are shown. Sets the disassembly to intel.
+disassemble _main : Shows the code of the _main section
+disassemble : Shows where we currently are in the execution flow
+info registers : Prints the registers and the values that they are holding
+info registers eflags : Prints the flags that are currently set
+stepi : Execute 1 instruction
+break _main : Sets a breakpoint to the first instruction of the _main label
+quit : Quit from gdb

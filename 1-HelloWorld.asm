@@ -28,8 +28,8 @@ _main:
 ;And then execute the syscall
 
 	string: db "Hello World", 0x0a	;db (Define Byte (8 bits) ). 0x0a on the ascii table will be a carriage return (Newline)
-	stringL: equ $-string								;Quick way to get lenght of a string based on a variable.
-																			;$: is referencing the end of the string (0x0a),
-																			;then it subtracts the start of the string (Which starts before the character H in "")
-																			;Sets the difference of the memory locations, or the offset, which gives us the amount of bytes
-																			;of difference
+	stringL: equ $-string		;Quick way to get lenght of a string based on a variable.
+					;$: is referencing the end of the string (0x0a),
+					;then it subtracts the start of the string (Which starts before the character H in "")
+					;Sets the difference of the memory locations, or the offset, which gives us the amount of bytes
+					;of difference

@@ -1,4 +1,4 @@
-; Comments are semicolumns. General structure of an assembly file
+; Comments are semicolon. General structure of an assembly file
 ;Tell the compiler / nasm where the entrypoint is. We use the global word
 ;_main is the start of the application
 

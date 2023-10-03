@@ -39,8 +39,8 @@ _main:
 	byte1: db "Hi", 0x0a		;Giving to the variable byte1 (Is 8 bits) the contents that it will hold with a newline (0x0a)
 	byte1L equ $-byte1		;Getting the length of the data that we will print
 
-	byte2: db "How", 0x0a		;The same as before
-	byte2L equ $-byte2		;The same as before
+	byte2: db "How", 0x0a
+	byte2L equ $-byte2
 
 	word1: dw "Is It Going People?", 0x0a	;Giving to the variable word1 (Is 16 bits) the contents that it will hold with a newline (0x0a)
 	word1L equ $-word1			;Getting the length of the data that we want to print

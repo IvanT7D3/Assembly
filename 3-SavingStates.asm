@@ -5,12 +5,12 @@
 
 global _main
 
-PrintText: ;Function called PrintText
-            ;The first things we have to do are: Push the EBP register and the ESP register onto the stack (Epilogue)
-			     			;Keeps track of EBP and ESP
-	push ebp			;Push ebp onto the stack ESP is the address of the top of the stack 
+PrintText:	;Function called PrintText
+        		;The first things we have to do are: Push the EBP register and the ESP register onto the stack (Epilogue)
+			;Keeps track of EBP and ESP
+	push ebp	;Push ebp onto the stack ESP is the address of the top of the stack 
 	mov ebp, esp	;Now the ebp register is holding the stack pointer. Now the flags and register data have a certain memory address
-								;We can then write our code
+			;We can then write our code
 
 	;Simple print statement
 	mov eax, 0x4
@@ -45,7 +45,6 @@ _main:
 	pushfd
 
 	call PrintText
-
 
 	;REMEMBER THAT THE STACK IS LIFO (Last In, First Out)
 	;So, when we complete the function call, we MUST pop first of all the flags (Using popfd, AND then popad):

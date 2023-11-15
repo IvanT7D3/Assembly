@@ -3,9 +3,9 @@
 ;When we create a function, we will get a new section of the stack when the function runs. However, when the function returns, it needs to
 ;put back the registers and the stack in the correct alignment that they were before the function was called, because the function doesn't need them anymore
 
-global _main
+global _start
 
-PrintText:	;Function called PrintText
+PrintText:		;Function called PrintText
         		;The first things we have to do are: Push the EBP register and the ESP register onto the stack (Epilogue)
 			;Keeps track of EBP and ESP
 	push ebp	;Push ebp onto the stack ESP is the address of the top of the stack 
@@ -29,7 +29,7 @@ PrintText:	;Function called PrintText
 			;leave would make us go back to the beginning of _main (Basically an infinite loop)
 			;ret makes us go back to the instruction AFTER the call of the function PrintText
 
-_main:
+_start:
 
 	;Before we make a function call, we need to push onto the stack the registers/all the contents of the registers, and the cpu flags that
 	;we will need later. We can do this manually, adding and removing them.
@@ -59,7 +59,7 @@ _main:
 	;We will now create the function called PrintText, below the global _main function
 
 
-	;Exits with return code 0
+	;Exit with return code 0
 	mov eax, 0x1
 	mov ebx, 0x0
 	int 0x80

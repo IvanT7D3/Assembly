@@ -1,10 +1,9 @@
-; Comments are semicolon. General structure of an assembly file
-;Tell the compiler / nasm where the entrypoint is. We use the global word
-;_main is the start of the application
+;This is a comment
 
-global _main
+;Tell to the linker where the entry point of the application is
+global _start
 
-_main:
+_start:
 				;Everything under _main: is what will be executed immediately
 
 	mov eax, 0x4		;Moves 0x4 in the register EAX (Used when you initialize a system call). Will use a syscall tabl

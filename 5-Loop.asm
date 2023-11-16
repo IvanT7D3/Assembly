@@ -4,7 +4,7 @@ global _start
 
 ;Functions should be above the entry point
 Print:
-	;The prolog is what happens at the beginning of a function. Its responsibility is to set up the stack frame of the called function.
+		      ;The prolog is what happens at the beginning of a function. Its responsibility is to set up the stack frame of the called function.
 	push ebp      ;Save the base pointer
 	mov ebp, esp  ;Set up a new base pointer
 
@@ -22,11 +22,11 @@ Print:
 	ret
 
 _start:
-	mov ecx, 0x5	;Set the loop counter to 5 (Counter register)
-                ;In this case the loop will print the string Loops 5 times
-                ;Using the keyword loop in nasm, it will take what is inside of ECX, and start counting down from the number that is inside of ECX
-                ;When we use loop, we must remember that when ECX finally hits 0, it will set the ZeroFlag
-                ;This means that when it calls the loop again, it notices that the ZeroFlag is set, and skips the loop
+	mov ecx, 0x5 ;Set ECX to 5 (Loop | Counter register)
+	;In this case the loop will print the string Loops 5 times
+	;Using the keyword loop in nasm, it will take what is inside of ECX, and start counting down from the number that is inside of ECX
+	;When we use loop, we must remember that when ECX finally hits 0, it will set the ZeroFlag
+	;This means that when it calls the loop again, it notices that the ZeroFlag is set, and skips the loop
 
 LoopFunc:
 	pushad         ;Push all general-purpose registers onto the stack
@@ -37,7 +37,7 @@ LoopFunc:
 	popfd          ;Pop the flags register from the stack
 	popad          ;Pop all general-purpose registers from the stack
 	loop LoopFunc  ;Loop back to LoopFunc while ecx is not zero
-                 ;This is similar to jump not zero (jnz). Just keep in mind for this particular case we're using the loop keyword
+                       ;This is similar to jump not zero (jnz). Just keep in mind for this particular case we're using the loop keyword
 
 	;Return
 	mov eax, 0x1

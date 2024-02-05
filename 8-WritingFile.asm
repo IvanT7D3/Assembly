@@ -13,10 +13,10 @@ _start:
 	mov esi, eax ;Preserving the open file for later use, moving it from eax to esi. esi is where the file descriptor for the opened file is located
 
 	;Write to a file descriptor
-	mov eax, 0x4  ;Write syscall
-	mov ebx, esi  ;Write to file descriptor
-	mov ecx, string  ;Buffer to read from
-	mov edx, stringL ;Amount of data we want to read
+	mov eax, 0x4     ;Write syscall
+	mov ebx, esi     ;Write to file descriptor
+	mov ecx, string  ;Buffer to write from
+	mov edx, stringL ;Amount of data to write
 	int 0x80         ;Execute syscall
 
 	mov eax, 0x06  ;Close syscall

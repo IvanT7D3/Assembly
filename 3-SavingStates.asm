@@ -8,7 +8,7 @@ global _start
 PrintText:		;Function called PrintText
         		;The first things we have to do are: Push the EBP register and the ESP register onto the stack (Epilogue)
 			;Keeps track of EBP and ESP
-	push ebp	;Push ebp onto the stack ESP is the address of the top of the stack 
+	push ebp	;Push ebp onto the stack ESP is the address of the top of the stack
 	mov ebp, esp	;Now the ebp register is holding the stack pointer. Now the flags and register data have a certain memory address
 			;We can then write our code
 
@@ -56,8 +56,6 @@ _start:
 
 	;To call a function, we use call and we give it a name or a memory address. Example: (REMEMBER THAT CASE SENSITIVITY IS STILL IMPORTANT)
 	;call PrintText
-	;We will now create the function called PrintText, below the global _main function
-
 
 	;Exit with return code 0
 	mov eax, 0x1
